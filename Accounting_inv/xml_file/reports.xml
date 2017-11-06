@@ -1,0 +1,18 @@
+<!-- Don't forget add this xml in _manifest_.py from this module. -->
+<odoo>
+	<data>
+        <!-- This tags you can use from acount invoice -->
+		<report
+    		id="{identifier report}"
+    		model="account.invoice"
+    		string="Invoices Ukr"
+    		report_type="qweb-pdf"
+   			name="{Name your model}.{value id your template report}"
+    		file="{Name your model}.{value id this report}"
+    		attachment_use="True"
+    		attachment="(object.state in ('open','paid')) and
+        	('INV'+(object.number or '').replace('/','')+'.pdf')"
+		/>
+		
+	</data>
+</odoo>
